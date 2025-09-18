@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>VPN ไทย - ปลอดภัยและเป็นส่วนตัว</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(120deg, #b2fefa 0%, #0ed2f7 100%);
+            font-family: 'Prompt', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 420px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            padding: 28px 18px 18px 18px;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 18px auto;
+            width: 80px;
+        }
+        h1 {
+            text-align: center;
+            color: #0ed2f7;
+            margin-bottom: 12px;
+            font-size: 2rem;
+        }
+        .desc {
+            text-align: center;
+            color: #555;
+            margin-bottom: 24px;
+        }
+        .vpn-features {
+            background: #f3f3f3;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .vpn-features ul {
+            padding-left: 18px;
+            color: #333;
+        }
+        .btn-apply {
+            background: linear-gradient(90deg, #0ed2f7 0%, #b2fefa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .btn-apply:hover {
+            background: linear-gradient(90deg, #b2fefa 0%, #0ed2f7 100%);
+        }
+        .result {
+            margin-top: 18px;
+            background: #b2fefa;
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            color: #0ed2f7;
+            font-size: 1.1rem;
+            display: none;
+        }
+        @media (max-width: 500px) {
+            .container {
+                max-width: 98vw;
+                padding: 12px 2vw 18px 2vw;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="VPN Logo" class="logo">
+        <h1>VPN ไทย</h1>
+        <div class="desc">
+            ปลอดภัย เป็นส่วนตัว ทะลุบล็อกทุกเว็บไซต์<br>
+            ใช้งานง่าย รองรับทุกอุปกรณ์
+        </div>
+        <div class="vpn-features">
+            <b>คุณสมบัติเด่น:</b>
+            <ul>
+                <li>ซ่อน IP Address ของคุณ</li>
+                <li>เข้ารหัสข้อมูลอินเทอร์เน็ต</li>
+                <li>เชื่อมต่อเซิร์ฟเวอร์ไทยและต่างประเทศ</li>
+                <li>ใช้งานได้ทั้ง Windows, Mac, iOS, Android</li>
+                <li>ไม่บันทึกประวัติการใช้งาน</li>
+            </ul>
+        </div>
+        <form id="vpnForm">
+            <label for="email">อีเมลสำหรับรับลิงก์ดาวน์โหลด VPN</label>
+            <input type="email" id="email" required placeholder="your@email.com" style="padding:10px; border-radius:8px; border:1px solid #ddd; width:100%; margin-bottom:12px;">
+            <button type="submit" class="btn-apply">ขอรับลิงก์ดาวน์โหลด</button>
+        </form>
+        <div class="result" id="resultBox"></div>
+    </div>
+    <script>
+        document.getElementById('vpnForm').onsubmit = function(e) {
+            e.preventDefault();
+            var email = document.getElementById('email').value.trim();
+            if(!email) return;
+            document.getElementById('resultBox').style.display = 'block';
+            document.getElementById('resultBox').textContent = 'ถูกหลอกแล้วไอ่โง่'
+            this.reset();
+        };
+    </script>
+</body>
+</html>
